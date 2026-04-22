@@ -4,14 +4,18 @@
   "description": "API académica de ejemplo para AUY1104 (Express + Docker)",
   "main": "src/index.js",
   "type": "commonjs",
-"scripts": {
-  "start": "node src/index.js",
-  "test": "jest --coverage"
-},
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --coverage"
+  },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }
