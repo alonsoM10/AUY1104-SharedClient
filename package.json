@@ -4,9 +4,10 @@
   "description": "API académica de ejemplo para AUY1104 (Express + Docker)",
   "main": "src/index.js",
   "type": "commonjs",
-  "scripts": {
-    "start": "node src/index.js"
-  },
+"scripts": {
+  "start": "node src/index.js",
+  "test": "jest --coverage"
+},
   "engines": {
     "node": ">=20"
   },
