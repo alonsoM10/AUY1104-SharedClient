@@ -1,8 +1,21 @@
-on: [push]
+# ─────────────────────────────────────────────────────────────
+# Este archivo vive en el repo del cliente.
+# Solo se ejecuta cuando publicas un tag de versión (v1.0.0, etc.)
+# Delega todo el trabajo al repo central (SharedCentral)
+# ─────────────────────────────────────────────────────────────
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
 
 jobs:
-  mi-job:
-    uses: alonsoM10/AUY1104-SharedWorkflows/.github/workflows/deploy-api.yaml@pipeTest
+  usar-receta-compartida:
+    uses: alonsoM10/AUY1104-SharedCentral/.github/workflows/deploy-api.yaml@main
+    with:
+      image-name: demo-api
+      image-tag: ${{ github.ref_name }}
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
